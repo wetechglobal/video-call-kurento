@@ -1,0 +1,35 @@
+@import '../variables.scss';
+
+.Dashboard {
+  &-Logo {
+    padding: 20px;
+    background-color: $side-backcolor-darker;
+    @include logo();
+  }
+
+  &-Header {
+    position: fixed;
+    top: 0;
+    left: 200px;
+    right: 0;
+    height: 41px;
+    line-height: 40px;
+    border-bottom: 1px solid grey;
+    padding: 0 15px;
+    background-color: white;
+    z-index: 7777;
+
+    .ant-breadcrumb-link .anticon + span {
+      margin-left: 6px;
+    }
+  }
+
+  .ant-layout {
+    background-color: white;
+  }
+
+  &-Content {
+    margin: 65px 25px 25px;
+    background-color: white;
+  }
+}

@@ -1,0 +1,26 @@
+.PageUserList {
+  .Admin {
+    color: red;
+  }
+  .Doctor {
+    color: blue;
+  }
+
+  .avatar {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+  .avatar-img {
+    position: absolute;
+    top: -2px;
+    bottom: -8px;
+    left: -5px;
+    right: -5px;
+    border-radius: 2px;
+    background-color: gray;
+    background-position: center;
+    background-size: cover;
+  }
+}

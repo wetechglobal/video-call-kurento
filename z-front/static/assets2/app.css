@@ -1,0 +1,283 @@
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+div.dragged {
+	cursor: all-scroll !important;
+	border-color: blue !important;
+	z-index: 10 !important;
+}
+
+.all-videos {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  background-color: white;
+  padding: 10px 10px 0;
+  border-right: 1px solid grey;
+  transition: left 300ms ease-out;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.all-videos video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: black;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+/*
+// .all-videos.active {
+//   left: 0;
+// }
+
+// #autohide {
+//   position: absolute;
+//   top: 0;
+//   left: 100%;
+//   width: 40px;
+//   height: 40px;
+//   background-color: grey;
+//   cursor: pointer;
+// }
+*/
+
+.small-video {
+}
+
+.member-name {
+  padding-top: 5px;
+  float: left;
+  color: #1fc0da;
+}
+.member-remove {
+  float: right;
+  padding: 5px;
+  cursor: pointer;
+  color: red;
+  font-size: 150% !important;
+}
+.member-title {
+  clear: both;
+}
+
+.main-video, .doc-preview {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 250px;
+  right: 0;
+  background-color: black;
+}
+
+.main-video.player {
+  background-color: #c5c5c5;
+}
+
+.main-video audio {
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.main-video canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  width: 100%;
+  margin-top: -10px;
+  margin-left: -5px;
+}
+.sologan {
+  color: #1fc0da;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+#header {
+  margin-bottom: 15px;
+}
+#header a {
+  color: blue;
+}
+
+
+#record-btn {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: red;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 0 0 5px 1px grey;
+  background-image: url('/assets2/video.png');
+  background-size: 23px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#record-btn.dictation {
+  background-image: url('/assets2/dictation.png');
+  background-size: 35px;
+}
+#record-btn.recording {
+  background-image: none;
+}
+
+#record-btn.recording::before, #record-btn.recording::after {
+  content: ' ';
+  position: absolute;
+  top: 12px;
+  width: 6px;
+  height: 16px;
+  background-color: white;
+  border-radius: 1px;
+}
+#record-btn.recording::before {
+  left: 12px;
+}
+#record-btn.recording::after {
+  left: 22px;
+}
+
+#recording-text {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  background-color: white;
+  padding: 5px;
+  display: none;
+  box-shadow: 0 0 5px 1px grey;
+  border-radius: 2px;
+}
+#recording-text.recording {
+  display: block;
+  animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+}
+
+@keyframes blinker {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+#mute-btn {
+  position: absolute;
+  top: 50px;
+  left: 5px;
+  background-color: white;
+  border-radius: 100%;
+  cursor: pointer;
+  background-color: white;
+  background-image: url('/assets2/microphone.png');
+  background-size: 35px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  box-shadow: 1px 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+#muted-text {
+  position: absolute;
+  top: 55px;
+  left: 50px;
+  background-color: white;
+  padding: 5px;
+  display: none;
+  box-shadow: 1px 0 5px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+#mute-btn.active {
+  background-image: url('/assets2/microphone-muted.png');
+}
+#muted-text.active {
+  display: block;
+}
+
+#endcall-btn {
+  position: absolute;
+  top: 95px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow: 0 0 5px 1px grey;
+  background-color: red;
+  background-image: url('/assets2/endcall.png');
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dictation-form-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  overflow: auto;
+}
+#dictation-form {
+  width: 300px;
+  padding: 5px 15px;
+  margin: auto;
+  margin-top: 10vh;
+}
+
+#playback-msg .btn {
+  margin-left: 5px;
+}
+#timestamp-start {
+  margin-top: 5px;
+}
+
+#timer-text {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  color: white;
+  background-color: black;
+  display: none;
+}
+
+
+#previewDocs {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#previewDocs iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#document-container {
+  margin-bottom: 15px;
+}
+.close-doc-preview {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 0 10px;
+  box-shadow: 1px 1px 7px 0 black;
+  border-radius: 2px;
+}

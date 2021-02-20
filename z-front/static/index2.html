@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>MAG Video Centre</title>
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.min.css" />
+  <link rel="stylesheet" type="text/css" href="/assets2/app.css" />
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="/bower_components/jquery.serializeJSON/jquery.serializejson.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="https://cdn.rawgit.com/muaz-khan/DetectRTC/master/DetectRTC.js"></script>
+
+  <script src="/lib/adapterjs/publish/adapter.debug.js"></script>
+  <script src="/bower_components/kurento-utils/dist/kurento-utils.js"></script>
+  <script src="https://staging-video.magconnect.com.au/socket.io/socket.io.js"></script>
+  <!-- <script src="http://localhost:3000/socket.io/socket.io.js"></script> -->
+
+  <script src="/assets2/index.js"></script>
+  <script src="/assets2/participants.js"></script>
+</head>
+<body>
+  <div class="main-video">
+    <canvas id="main-video"></canvas>
+    <div id="record-btn" title="Toggle recording"></div>
+    <div id="recording-text">Recording...</div>
+    <div id="mute-btn" title="Toggle microphone"></div>
+    <div id="muted-text"></div>
+    <div id="endcall-btn" title="Stop"></div>
+    <div id="timer-text"></div>
+    <div id="previewDocs"></div><button class="close-doc-preview" style="display: none;">Close document</button>
+  </div>
+  <div class="all-videos">
+    <div id="header">
+      <a href="/"><img class="logo" src="/assets2/mag.png" alt="MAG"/></a>
+      <div class="sologan">The <strong>right</strong> doctor at the <strong>right</strong> time</div>
+      <div class="text-danger">System requirements: MAG Video requires Chrome browser on both Windows or Mac Operating Systems.</div>
+    </div>
+    <div id="document-title"><strong>Documents:</strong></div>
+    <div id="document-container"></div>
+    <div id="video_list">
+      <div class="small-video" id="local_video">
+        <strong class="member-name">You:</strong>
+        <video autoplay></video>
+      </div>
+    </div>
+  </div>
+
+  <div class="dictation-form-container">
+    <form id="dictation-form" class="clearfix">
+      <h3>Dictation information</h3>
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input id="name" class="form-control" name="name" />
+      </div>
+      <div class="form-group">
+        <label for="caseId">Case ID</label>
+        <input id="caseId" class="form-control" name="caseId" />
+      </div>
+      <hr />
+      <button class="btn btn-primary pull-right">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

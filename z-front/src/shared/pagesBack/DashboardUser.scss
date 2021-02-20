@@ -1,0 +1,46 @@
+@import '../variables.scss';
+
+.DashboardUser {
+  &-Dropdown {
+    position: relative;
+    top: -6px;
+    .anticon {
+      margin-left: 10px;
+      margin-right: 8px;
+    }
+    .anticon + span {
+      margin-right: 10px;
+    }
+    .anticon-logout {
+      font-size: 85%;
+      position: relative;
+      left: 1px;
+      margin-right: 11px;
+    }
+    .anticon-logout, .anticon-logout + span {
+      color: $danger-color;
+    }
+  }
+
+  &-User {
+    position: relative;
+    margin-right: 8px;
+    padding-right: 28px;
+    cursor: pointer;
+  }
+  &-Name {
+    margin-right: 4px;
+  }
+  &-Avatar {
+    display: block;
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 2px;
+    background-color: gray;
+    background-size: cover;
+    background-position: center;
+  }
+}

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai&subset=vietnamese');
+
+// Sizes
+$size-xs: 400px;
+$size-sm: 480px;
+$size-md: 640px;
+$size-lg: 960px;
+$size-xl: 1280px;
+
+// Colors
+$side-backcolor: #404040;
+$side-backcolor-darker: #303030;
+$danger-color: #f04134;
+
+// Others
+$logo-uri: '../assets/logo.png';
+
+// Helpers
+@mixin logo() {
+  &:before {
+    content: ' ';
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    padding-bottom: 100%;
+    background-image: url($logo-uri);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@mixin headerFont() {
+  color: black;
+  /*font-family: 'Arima Madurai', cursive;*/
+  font-size: 200%;
+}
+
+@mixin biggerIcon($rearrange: false) {
+  .anticon {
+    font-size: 125%;
+    @if $rearrange {
+      position: relative;
+      top: 1px;
+    }
+  }
+}

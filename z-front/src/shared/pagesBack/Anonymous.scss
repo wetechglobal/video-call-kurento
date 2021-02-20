@@ -1,0 +1,78 @@
+@import '../variables.scss';
+
+.Anonymous {
+  &-Header, &-Body {
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+  }
+  &-Header {
+    left: 0;
+    right: 80%;
+    // background-color: $side-backcolor-darker;
+    background-image: url('../assets/anonymous-sidebar.png');
+    background-size: cover;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      // background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  &-Body {
+    left: 20%;
+    right: 0;
+  }
+
+  &-Logo, &-Form {
+    margin: 15vh auto;
+  }
+  &-Logo {
+    max-width: 350px;
+    @include logo();
+  }
+
+  &-CirrusSologan {
+    position: relative;
+    margin-top: calc(50vh - 15rem);
+    font-size: 2rem;
+  }
+    &-CirrusSologan:before {
+      content: 'The right doctor';
+      display: block;
+      color: white;
+    }
+    &-CirrusSologan:after {
+      content: 'at the right time';
+      display: block;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 1rem;
+      color: white;
+    }
+  &-Form {
+    max-width: 300px;
+    @include biggerIcon();
+
+    &--loading {
+      padding-top: 7px;
+      font-size: 200%;
+    }
+
+    hr {
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      line-height: 15px;
+      margin: 10px 0;
+    }
+  }
+}

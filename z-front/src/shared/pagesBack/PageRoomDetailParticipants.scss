@@ -1,0 +1,13 @@
+.PageRoomDetailParticipants {
+  .joined {
+    color: green;
+  }
+  .disconnected {
+    color: red;
+  }
+  .participantsLimitWarning {
+    margin-left: 10px;
+    line-height: 30px;
+    color: red;
+  }
+}

@@ -1,0 +1,252 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.11/sweetalert2.min.css');
+@import url('https://fonts.googleapis.com/css?family=Saira:300,500');
+
+html, body {
+  font-family: Saira, Tahoma, sans-serif;
+  background-color: white;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.53846154; /* 20/13 */
+}
+video {
+  display: none;
+  background-color: black;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.Sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 22rem;
+  padding: 8rem 2rem 2rem 1.5rem;
+  background-image: url('/assets/sidebar.png');
+  background-size: cover;
+}
+  .Sidebar:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+.Cirrus {
+  position: relative;
+  color: white;
+}
+  .CirrusLogo {
+    width: 17rem;
+    height: 3.5rem;
+    background-image: url('/assets/logo.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 1rem;
+  }
+  .CirrusTitle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #1FC0DA;
+    font-size: 4rem;
+    line-height: 1;
+  }
+    .CirrusTitle:before {
+      content: 'CIRRUS';
+    }
+  .CirrusPowered {
+    position: relative;
+  }
+    .CirrusPowered:before {
+      content: 'Powered by:';
+      display: block;
+    }
+    .CirrusPowered:after {
+      content: 'Medicolegal Assessments Group';
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      font-size: 1.2rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+  .CirrusSologan {
+    position: relative;
+    margin-top: calc(50vh - 15rem);
+    font-size: 2rem;
+  }
+    .CirrusSologan:before {
+      content: 'The right doctor';
+      display: block;
+    }
+    .CirrusSologan:after {
+      content: 'at the right time';
+      display: block;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 1rem;
+    }
+
+#container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 22rem;
+  right: 0;
+  overflow: hidden;
+  display: none;
+}
+#message {
+  text-align: center;
+  margin-top: 30px;
+}
+#notify {
+  display: none;
+  margin: 0 auto;
+  border-radius: 3px;
+  padding: 2px 0;
+  width: 200px;
+  background-color: #28c0da;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+#notifyfail {
+
+  display: none;
+  margin: 0 auto;
+  border-radius: 3px;
+  padding: 2px 0;
+  width: 200px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#remote-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 0 0;
+}
+.screen-rotated #remote-video {
+  transform: rotateZ(90deg) translateY(-100%);
+  transform-origin: top left;
+}
+
+#local-video-container {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+/*.local-video-resize {
+  position: absolute;
+}
+#local-video-resize-t, #local-video-resize-b {
+  left: 0;
+  width: 100%;
+  height: 7px;
+  cursor: row-resize;
+}
+#local-video-resize-t {
+  top: -3px;
+}
+#local-video-resize-b {
+  bottom: -3px;
+}
+#local-video-resize-l, #local-video-resize-r {
+  top: 0;
+  height: 100%;
+  width: 7px;
+  cursor: col-resize;
+}
+#local-video-resize-l {
+  left: -3px;
+}
+#local-video-resize-r {
+  right: -3px;
+}*/
+#local-video {
+  border: 1px solid grey;
+  border-radius: 2px;
+  /*cursor: move;*/
+  max-width: 50vw;
+  max-height: 20vh;
+}
+  @media (orientation: landscape) {
+    #local-video {
+      max-width: 20vw;
+      max-height: 50vh;
+    }
+  }
+
+.mute-btn {
+  right: 5px;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.muted-text {
+  right: 55px;
+  padding: 5px;
+  display: none;
+  border-radius: 2px;
+  line-height: 15px;
+  transform: translateY(8px);
+}
+.mute-btn, .muted-text {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+}
+  .muted-text.active {
+    display: block;
+  }
+#audio-mute-btn {
+  background-image: url('https://img.icons8.com/material/64/000000/microphone.png');
+  background-size: 25px;
+}
+#audio-mute-btn, #audio-muted-text {
+  top: -95px;
+}
+#audio-mute-btn.active {
+  background-image: url('https://img.icons8.com/material/64/000000/no-microphone.png');
+}
+#video-mute-btn {
+  background-image: url('https://img.icons8.com/metro/64/000000/video-call.png');
+  background-size: 20px;
+}
+#video-mute-btn, #video-muted-text {
+  top: -50px;
+}
+#video-mute-btn.active {
+  background-image: url('https://img.icons8.com/metro/64/000000/no-video.png');
+}
+
+@media (max-width: 800px) {
+  .Sidebar {
+    display: none;
+  }
+  #container {
+    left: 0;
+  }
+}

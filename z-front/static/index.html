@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAG Video Centre</title>
+  <link rel="stylesheet" type="text/css" href="/assets/app.css?v=0" />
+</head>
+<body>
+  <div class="Sidebar">
+    <div class="Cirrus">
+      <div class="CirrusLogo"></div>
+      <!-- <div class="CirrusTitle"></div> -->
+      <!-- <div class="CirrusPowered"></div> -->
+      <div class="CirrusSologan"></div>
+    </div>
+  </div>
+  <div id="container">
+    <video id="remote-video" autoplay playsinline></video>
+    <div id="message">Waiting for participant...</div>
+    <div id="notify">Notify other participant to join</div>
+    <div id="notifyfail">Report session did not go OK</div>
+
+    <div id="local-video-container">
+      <video id="local-video" autoplay playsinline muted></video>
+      <div class="local-video-resize" id="local-video-resize-t"></div>
+      <div class="local-video-resize" id="local-video-resize-b"></div>
+      <div class="local-video-resize" id="local-video-resize-l"></div>
+      <div class="local-video-resize" id="local-video-resize-r"></div>
+      <div class="mute-btn" id="audio-mute-btn" title="Toggle microphone"></div>
+      <div class="muted-text" id="audio-muted-text">Micro muted</div>
+      <div class="mute-btn" id="video-mute-btn" title="Toggle camera"></div>
+      <div class="muted-text" id="video-muted-text">Camera muted</div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.4/es6-shim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.11/sweetalert2.all.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script src="https://cdn.rawgit.com/muaz-khan/DetectRTC/master/DetectRTC.js"></script>
+  <script src="https://staging-video.magconnect.com.au//socket.io/socket.io.js"></script>
+  <!-- <script src="http://localhost:3000/socket.io/socket.io.js"></script> -->
+  <script src="/assets/app.js?v=0"></script>
+</body>

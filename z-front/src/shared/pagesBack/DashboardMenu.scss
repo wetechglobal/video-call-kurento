@@ -1,0 +1,5 @@
+@import '../variables.scss';
+
+.DashboardMenu {
+  @include biggerIcon($rearrange: true);
+}

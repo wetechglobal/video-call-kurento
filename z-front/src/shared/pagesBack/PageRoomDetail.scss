@@ -1,0 +1,30 @@
+.PageRoomDetail {
+  .status {
+    margin-top: 35px;
+    margin-left: 5px;
+  }
+  .Opening, .Closed {
+    margin-right: 5px;
+    &.nomargin {
+      margin-right: 0;
+    }
+  }
+  .Opening, .Joining {
+    color: green;
+  }
+  .Closed, .Disconnected, .Awaiting, .Removed {
+    color: red;
+  }
+  .indent {
+    text-indent: 20px;
+    margin-bottom: 15px;
+    max-width: 600px;
+    text-align: justify;
+  }
+  .TableButtons {
+    margin-bottom: 5px;
+    .ant-btn {
+      margin-right: 5px;
+    }
+  }
+}

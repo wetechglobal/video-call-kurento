@@ -1,0 +1,6 @@
+{
+  extends: './.eslintrc-browser',
+  env: {
+    node: true,
+  },
+}

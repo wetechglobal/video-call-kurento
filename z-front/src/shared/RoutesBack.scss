@@ -1,0 +1,260 @@
+@import './variables.scss';
+
+
+// Reset the html and body tag to prevent
+//    kinetic scroll when there's no scroll bar
+html, body, .fullscreen-fixed {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+html, body {
+  overflow: hidden;
+}
+.fullscreen-fixed {
+  overflow: auto;
+}
+
+a {
+  text-decoration: none !important;
+}
+  a.link:hover {
+    text-decoration: underline !important;
+  }
+.link-active {
+  color: inherit !important;
+  cursor: auto !important;
+}
+
+h1 {
+  margin: 25px 0;
+  @include headerFont();
+}
+.h1MenuGroup {
+  margin-top: 25px;
+  .ant-btn {
+    margin-left: 5px;
+  }
+}
+.mTB10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+// Custom helper classes like Bootstrap
+.clearfix {
+  &:before, &:after {
+    content: ' ';
+    clear: both;
+  }
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+
+.middle-outer {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.middle-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+// Custom ant
+.divider {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.ant-form-item {
+  margin-bottom: 10px;
+}
+.ant-form-item-label {
+  line-height: 20px;
+}
+.ant-modal {
+  max-width: 520px;
+  width: auto !important;
+  margin: 0 auto !important;
+  padding: 0 15px;
+}
+.ant-custom-modal {
+  max-width: 400px;
+  margin: auto;
+  padding: 0 15px;
+
+  button {
+    margin-left: 5px;
+  }
+  textarea.ant-input {
+    height: 140px;
+    resize: none;
+  }
+}
+
+
+.a4-preview {
+  iframe, img, audio, video {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 2px;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+  }
+  iframe {
+    border: 0;
+    height: calc(100vh - 300px);
+    min-height: 500px;
+  }
+  img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+  video {
+    max-width: 500px;
+    min-height: 300px;
+  }
+  audio {
+    max-width: 500px;
+    min-height: 100px;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.btn-left {
+  margin-right: 7px;
+}
+.btn-right {
+  margin-left: 7px;
+}
+
+.CaseNoteList {
+  max-width: 800px;
+}
+.CaseNoteItem {
+  margin-bottom: 15px;
+  p, ul, ol {
+    margin-bottom: 5px;
+  }
+  ul {
+    list-style: default !important;
+  }
+  ol {
+    list-style: decimal !important;
+  }
+  ul, ol {
+    list-style-position: inside !important;
+  }
+  ul, ol {
+    & > li {
+      & > ol, & > ul {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+.CaseNoteItem-created {
+  float: left;
+  position: relative;
+  width: 250px;
+  padding-top: 5px;
+  padding-left: 50px;
+  .avatar {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: grey;
+    border-radius: 2px;
+  }
+  .name {
+    font-weight: bold;
+    color: black;
+  }
+}
+.CaseNoteItem-body {
+  float: left;
+  width: calc(100% - 250px);
+}
+
+.ReactRTE-editor {
+  margin-bottom: 10px;
+  & > div {
+    min-height: 200px;
+  }
+  .DraftEditor-root {
+    font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+}
+
+.ant-table {
+  background-color: white;
+}
+.more-icon {
+  transform: rotate(90deg);
+  &:hover {
+    background-color: grey;
+  }
+}
+  .status {
+    margin-top: 35px;
+    & > span {
+      margin-left: 5px;
+    }
+  }
+  .indent {
+    margin-bottom: 15px;
+    max-width: 600px;
+    text-align: justify;
+  }
+.ml-1 {
+  margin-left: 5px;
+}
+.mr-1 {
+  margin-right: 5px;
+}
+.bold {
+  font-weight: bold;
+}
+
+.ant-notification, .ant-dropdown {
+  z-index: 9999 !important;
+}
+
+.txt-sucess {
+  color: green;
+}
+.txt-warning {
+  color: orange;
+}

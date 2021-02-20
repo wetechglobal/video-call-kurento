@@ -1,0 +1,66 @@
+* {
+  outline: none !important;
+}
+
+#files .size, #files .date {
+  text-indent: 0;
+  padding-right: 10px;
+  direction: initial;
+}
+
+#files .btn {
+  padding: 2px 10px 1px;
+  position: relative;
+  top: -2px;
+  margin-left: 5px;
+}
+
+#files .btn:first-child {
+  margin-left: 0;
+}
+
+#files .flac .name, #files .mp3 .name {
+  background-image: url('/assets/icons/music.png');
+}
+
+.sub-view-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  display: none;
+}
+.sub-view-header {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  right: 25px;
+  height: 40px;
+}
+.sub-view-header .btn {
+  margin-left: 10px;
+}
+.sub-view-content {
+  position: absolute;;
+  top: 60px;
+  bottom: 25px;
+  left: 25px;
+  right: 25px;
+  overflow: auto;
+  background-color: #c5c5c5;
+  border-radius: 4px;
+}
+.sub-view-content audio, video {
+  display: block;
+  margin: 25px auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+.sub-view-content pre {
+  min-height: 100%;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: keep-all;
+}
