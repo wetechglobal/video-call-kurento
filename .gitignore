@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+wetech_jitsi_demo/node_modules
+wetech_jitsi_demo/.pnp
+wetech_jitsi_demo/.pnp.js
+
+# testing
+wetech_jitsi_demo/coverage
+
+# production
+wetech_jitsi_demo/build
+
+# misc
+wetech_jitsi_demo/.DS_Store
+wetech_jitsi_demo/.env.local
+wetech_jitsi_demo/.env.development.local
+wetech_jitsi_demo/.env.test.local
+wetech_jitsi_demo/.env.production.local
+
+wetech_jitsi_demo/npm-debug.log*
+wetech_jitsi_demo/yarn-debug.log*
+wetech_jitsi_demo/yarn-error.log*
